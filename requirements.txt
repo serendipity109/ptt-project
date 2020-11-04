@@ -1,0 +1,6 @@
+scrapy
+Flask
+jieba
+numpy
+html2text
+pandas
