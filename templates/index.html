@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gossip Analysis</title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    table.right {
+      margin-right: auto;
+    }
+    </style>
+</head>
+<body>
+<table style="top:10px;left:30px;position:absolute;">
+<caption>正面文章</caption>
+  <thead>
+  <th>title</th>
+  <th>score</th>
+  <th>url</th>
+  </thead>
+  <tbody>
+    <meta charset="UTF-8">
+    {% for history in pos %}
+    <tr>
+      <td>{{ history.title }}</td>
+      <td>{{ history.score }}</td>
+      <td>{{ history.url }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<table style="top:400px;left:30px;position:absolute;">
+<caption >負面文章</caption>
+  <thead>
+  <th>title</th>
+  <th>score</th>
+  <th>url</th>
+  </thead>
+  <tbody>
+    <meta charset="UTF-8">
+    {% for history in neg %}
+    <tr>
+      <td>{{ history.title }}</td>
+      <td>{{ history.score }}</td>
+      <td>{{ history.url }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<table style="top:10px;right:200px;position:absolute;">
+<caption >常見推文</caption>
+  <thead>
+  <th>keywords</th>
+  <th>counts</th>
+  </thead>
+  <tbody>
+    <meta charset="UTF-8">
+    {% for history in up %}
+    <tr>
+      <td>{{ history.keywords }}</td>
+      <td>{{ history.counts }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<table style="top:10px;right:500px;position:absolute;">
+<caption >常見噓文</caption>
+  <thead>
+  <th>keywords</th>
+  <th>counts</th>
+  </thead>
+  <tbody>
+    <meta charset="UTF-8">
+    {% for history in down %}
+    <tr>
+      <td>{{ history.keywords }}</td>
+      <td>{{ history.counts }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</body>
+</html>
+
